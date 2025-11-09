@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>$HIRO — The Deliverator Agent on Solana</title>
+  <meta name="description" content="$HIRO is a Snow-Crash-inspired Solana memecoin with a cyberpunk vibe, community-first roadmap, and an upcoming autonomous X agent."/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b10; --bg2:#100d1a;
+      --teal:#00e8ff; --violet:#9b59ff;
+      --text:#d7e4ee; --muted:#8fa1b5;
+      --card:rgba(255,255,255,.04);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text); background:linear-gradient(180deg,var(--bg),var(--bg2));
+      overflow-x:hidden;
+    }
+    /* Neon overlay */
+    .bg-overlay::before, .bg-overlay::after{
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+    }
+    .bg-overlay::before{
+      background:
+        radial-gradient(60vw 60vh at 20% 10%, rgba(0,232,255,.18), transparent 60%),
+        radial-gradient(50vw 60vh at 80% 90%, rgba(155,89,255,.18), transparent 60%);
+      mix-blend-mode:screen; filter: blur(8px);
+    }
+    .bg-overlay::after{
+      background:
+        repeating-linear-gradient(to bottom, rgba(255,255,255,.03) 0 1px, transparent 2px),
+        linear-gradient(to bottom, rgba(255,255,255,.05), transparent 15%),
+        repeating-linear-gradient(90deg, rgba(0,232,255,.07) 0 2px, transparent 3px 40px);
+      opacity:.35;
+    }
+    a{color:var(--teal); text-decoration:none}
+    header{
+      position:sticky; top:0; backdrop-filter:blur(8px);
+      background:linear-gradient(180deg, rgba(0,0,0,.35), transparent);
+      z-index:10; border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .wrap{max-width:1200px; margin:0 auto; padding:0 20px}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{font:700 20px "DM Sans",sans-serif; letter-spacing:.5px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 16px; border-radius:40px; font-weight:600; color:#061016; background:var(--teal);
+      box-shadow:0 0 20px rgba(0,232,255,.35); transition:.2s transform, .2s filter;
+    }
+    .btn.alt{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.16)}
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.1)}
+    .hero{padding:64px 0 32px}
+    .grid{display:grid; gap:32px}
+    .hero .grid{grid-template-columns: 1.1fr 1fr; align-items:center}
+    .pfp{
+      width:100%; max-width:460px; aspect-ratio:1/1; border-radius:24px;
+      background:radial-gradient(40% 40% at 50% 50%, rgba(0,232,255,.18), rgba(155,89,255,.18) 60%, transparent 70%);
+      margin:auto; display:block;
+      box-shadow:0 0 60px rgba(0,232,255,.25), 0 0 60px rgba(155,89,255,.15) inset;
+    }
+    h1,h2,h3{font-family:"DM Sans",sans-serif; margin:0 0 12px}
+    h1{font-size:clamp(32px,5vw,54px)}
+    p.lead{color:var(--muted); font-size:18px; line-height:1.6}
+    .badge{
+      display:inline-flex; gap:10px; align-items:center; background:var(--card); padding:10px 14px;
+      border-radius:12px; border:1px solid rgba(255,255,255,.07);
+    }
+    .copy{cursor:pointer; color:var(--teal); font-weight:600}
+    section{padding:56px 0}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:24px}
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .stats{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+    .list{margin:0; padding-left:18px}
+    .timeline{display:grid; gap:14px}
+    .step{padding:18px 18px; border-left:3px solid var(--violet); background:rgba(255,255,255,.03); border-radius:10px}
+    footer{padding:36px 0 56px; color:#9fb0c3; font-size:14px}
+    @media (max-width:900px){
+      .hero .grid{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<div class="bg-overlay"></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">$HIRO</div>
+    <nav style="display:flex; gap:16px; align-items:center; flex-wrap:wrap">
+      <a href="#about">About</a> •
+      <a href="#token">Token</a> •
+      <a href="#buy">How to Buy</a> •
+      <a href="#roadmap">Roadmap</a>
+      <a class="btn" href="{{JUPITER_SWAP_URL}}" target="_blank" rel="noopener">Buy on Jupiter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap grid">
+      <!-- SWAPPED: plain PNG img tag -->
+      <img src="{{PATH_TO_HIRO_PFP}}" alt="$HIRO avatar" class="pfp" />
+      <div>
+        <h1>$HIRO — The Deliverator Agent on Solana</h1>
+        <p class="lead">Neon cyber-samurai slicing through the metaverse. We're all about the memes, the vibes, and the decentralized rebellion. Utility drops when the katana's razor-sharp.</p>
+
+        <div class="badge" aria-live="polite">
+          <span><strong>Contract:</strong> <span id="contract">{{CONTRACT_ADDRESS}}</span></span>
+          <span class="copy" id="copyBtn" title="Copy contract">Copy</span>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="{{JUPITER_SWAP_URL}}" target="_blank" rel="noopener">Buy on Jupiter</a>
+          <a class="btn alt" href="{{DEXSCREENER_OR_BIRDEYE_URL}}" target="_blank" rel="noopener">View Chart</a>
+          <a class="btn alt" href="https://x.com/HiroInMetaverse" target="_blank" rel="noopener">Follow on X</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2>What is $HIRO?</h2>
+
+    <!-- The Vibe -->
+    <div class="card" style="margin-bottom:16px">
+      <strong>The Vibe:</strong>
+      <p>
+        $HIRO channels the essence of Hiro Protagonist — a blade-sharp hacker who rides the
+        Metaverse like a midnight freeway and refuses to kneel to centralized anything. Our tribe vibes with
+        self-custody, privacy, and peer-to-peer free markets; the kind of cypherpunk energy that would cheer
+        on Bitcoin and Monero while memeing in neon. Expect white-hat raids, glitch art, zero-permission
+        coordination, and a community that treats “decentralized or bust” as a lifestyle, not a slogan.
+      </p>
+    </div>
+
+    <!-- The “community coin” blurb (utility later; culture now) -->
+    <div class="card" style="margin-bottom:16px">
+      <p>
+        <strong>$HIRO is a community coin that channels the rogue spirit of Hiro Protagonist—a katana-wielding hacker from Snow Crash, slicing through Metaverse chaos and toppling centralized overlords with code and cunning. Half-Black, half-Korean, he's the ultimate outsider: a digital ronin who champions self-custody, privacy, and peer-to-peer free markets, the cypherpunk fire that fuels Bitcoin and Monero while mocking corporate chains. Our community thrives on that vibe—white-hat hacks, glitch-art memes, zero-permission raids, and decentralized coordination as a battle cry. Join the rebellion: Decentralize or crash.
+      </p>
+
+      <div class="features" style="margin-top:10px">
+        <div class="card"><strong>Metaverse</strong><br/><small>Coined in the novel — the networked 3D street where avatars meet; our aesthetic and community hub inspiration.</small></div>
+        <div class="card"><strong>Black Sun</strong><br/><small>The legendary virtual nightclub for coders and samurai; our vibe for raids, events, and big reveals.</small></div>
+        <div class="card"><strong>Nam-Shub of Enki</strong><br/><small>The mythic code-spell against the Snow Crash virus — a nod to language-as-power and meme magic.</small></div>
+      </div>
+    </div>
+
+    <!-- Community Code -->
+    <div class="card">
+      <h3 style="margin-top:0">Community Code</h3>
+      <ul class="list">
+        <li><strong>Self-custody first:</strong> not your keys, not your coins.</li>
+        <li><strong>Privacy matters:</strong> nym-friendly culture, OPSEC encouraged.</li>
+        <li><strong>Peer-to-peer by default:</strong> markets without permission; build, don’t beg.</li>
+        <li><strong>Open-source bias:</strong> prefer transparent code and reproducible builds.</li>
+        <li><strong>Verify, don’t trust:</strong> on-chain receipts, doxxed wallets.</li>
+        <li><strong>No rent-seeking:</strong> fair launch values; no stealth taxes, no farming soft rugs.</li>
+        <li><strong>Memes are messages:</strong> culture ships faster than roadmaps — keep it fun, sharp, and respectful.</li>
+        <li><strong>DYOR & responsibility:</strong> nothing here is financial advice; think for yourself.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+  <!-- TOKEN -->
+  <section id="token">
+    <div class="wrap">
+      <h2>Token</h2>
+      <div class="stats">
+        <div class="card">
+          <ul class="list">
+            <li><strong>Ticker:</strong> $HIRO</li>
+            <li><strong>Chain:</strong> Solana</li>
+            <li><strong>Total Supply:</strong> 1,000,000,000</li>
+            <li><strong>Mint (Contract):</strong> <a href="https://solscan.io/token/{{CONTRACT_ADDRESS}}" target="_blank" rel="noopener">{{CONTRACT_ADDRESS}}</a></li>
+            <li><strong>Mint Authority:</strong> revoked ({{MINT_AUTH_ADDR}})</li>
+            <li><strong>Freeze Authority:</strong> disabled / multisig ({{FREEZE_AUTH_ADDR}})</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Allocation</strong>
+          <ul class="list">
+            <li>Liquidity Pool — 60% locked</li>
+            <li>Community — 5%</li>
+            <li>Team (vesting 6–12 mo) — 5%</li>
+          </ul>
+          <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn alt" href="{{LP_LOCK_PROOF_URL}}" target="_blank" rel="noopener">LP Lock Proof</a>
+            <a class="btn alt" href="https://solscan.io/token/{{CONTRACT_ADDRESS}}" target="_blank" rel="noopener">View on Solscan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUY -->
+  <section id="buy">
+    <div class="wrap">
+      <h2>How to Buy</h2>
+      <div class="card">
+        <ol class="list">
+          <li>Get SOL in your Phantom or Solflare wallet.</li>
+          <li>Open Jupiter or use your favorite trading platform and paste the contract address. Or use the direct pair link.</li>
+          <li>Set slippage, confirm, and swap SOL for $HIRO.</li>
+        </ol>
+        <a class="btn" href="{{JUPITER_SWAP_URL}}" target="_blank" rel="noopener">Open Jupiter</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Contract:</strong> <span id="contractFooter">{{CONTRACT_ADDRESS}}</span></p>
+    <p>$HIRO is a memecoin community token and software project. Nothing here is investment advice. Always verify contract address.</p>
+    <p>© <span id="year"></span> HIRO • <a href="https://x.com/HiroInMetaverse" target="_blank" rel="noopener">@HiroInMetaverse</a></p>
+  </div>
+</footer>
+
+<script>
+  const copyBtn = document.getElementById('copyBtn');
+  copyBtn?.addEventListener('click', async () => {
+    const text = document.getElementById('contract').textContent.trim();
+    try { await navigator.clipboard.writeText(text); copyBtn.textContent = 'Copied!'; setTimeout(()=>copyBtn.textContent='Copy',1500); }
+    catch { alert('Copy failed'); }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('contractFooter').textContent = document.getElementById('contract').textContent;
+</script>
+</body>
+</html>

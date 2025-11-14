@@ -3,8 +3,30 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
   <title>$HIRO — The Deliverator Samurai on Solana</title>
   <meta name="description" content="$HIRO is a Snow-Crash-inspired Solana memecoin with a cyberpunk vibe, community-first ethos, and an upcoming autonomous X agent."/>
+
+  <!-- Canonical (set this to your live URL) -->
+  <link rel="canonical" href="https://<your-project>.pages.dev/"/>
+
+  <!-- Open Graph (controls WhatsApp/FB/iMessage previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$HIRO — The Deliverator Samurai on Solana">
+  <meta property="og:description" content="$HIRO is a Snow-Crash-inspired Solana memecoin with a cyberpunk vibe, community-first ethos, and an upcoming autonomous X agent.">
+  <meta property="og:url" content="https://<your-project>.pages.dev/">
+  <!-- Provide a 1200x630 image in /assets -->
+  <meta property="og:image" content="https://<your-project>.pages.dev/assets/og-hiro.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card (X) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$HIRO — The Deliverator Samurai on Solana">
+  <meta name="twitter:description" content="$HIRO is a Snow-Crash-inspired Solana memecoin with a cyberpunk vibe, community-first ethos, and an upcoming autonomous X agent.">
+  <meta name="twitter:image" content="https://<your-project>.pages.dev/assets/og-hiro.jpg">
+  <meta name="twitter:site" content="@HiroInMetaverse">
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -148,105 +170,4 @@
       <div class="features" style="margin-top:10px">
         <div class="card"><strong>Metaverse</strong><br/><small>Coined in the novel — the networked 3D street where avatars meet; our aesthetic and community hub inspiration.</small></div>
         <div class="card"><strong>Black Sun</strong><br/><small>The legendary virtual nightclub for coders and samurai; our vibe for raids, events, and big reveals.</small></div>
-        <div class="card"><strong>Nam-Shub of Enki</strong><br/><small>The mythic code-spell against the Snow Crash virus — a nod to language-as-power and meme magic.</small></div>
-      </div>
-    </div>
-
-    <!-- Community Code -->
-    <div class="card">
-      <h3 style="margin-top:0">Community Code</h3>
-      <ul class="list">
-        <li><strong>Self-Custody Supreme:</strong> Not your keys, not your coins—stack those Bitcoin sats like digital gold in your own vault, no fiat slaves or centralized traps.</li>
-        <li><strong>Privacy as Armor:</strong> Cultivate OPSEC like a shadow ronin; Monero's your silver for stealth spends, keeping the surveillance overlords blind.</li>
-        <li><strong>Peer-to-Peer Rebellion:</strong> Markets without permission—build decentralized, don't beg the corps; trade direct, hack the system ethically.</li>
-        <li><strong>Open-Source Edge:</strong> Favor transparent code and reproducible builds; fork the matrix, expose the glitches, no black-box bullshit.</li>
-        <li><strong>Verify, Never Trust:</strong> Demand on-chain proofs and doxxed wallets; audit everything, from launches to lore—decentralize or die.</li>
-        <li><strong>No Rent-Seeking Scams:</strong> Fair launches only—no stealth taxes, no soft rugs or farming cons; value flows free, like code in the Metaverse.</li>
-        <li><strong>Memes as Katanas:</strong> Culture cuts faster than roadmaps—keep 'em fun, sharp, and respectful; glitch-art raids that mock the overlords.</li>
-        <li><strong>DYOR & Ronin Mindset:</strong> Nothing here's financial advice—think for yourself, research deep, own your moves; decentralize or crash out.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-  <!-- TOKEN -->
-  <section id="token">
-    <div class="wrap">
-      <h2>Token</h2>
-      <div class="stats">
-        <div class="card">
-          <ul class="list">
-            <li><strong>Ticker:</strong> $HIRO</li>
-            <li><strong>Chain:</strong> Solana</li>
-            <li><strong>Total Supply:</strong> 1,000,000,000</li>
-            <li><strong>Mint (Contract Address - CA):</strong> <a href="https://solscan.io/token/{{CONTRACT_ADDRESS}}" target="_blank" rel="noopener">{{CONTRACT_ADDRESS}}</a></li>
-            <li><strong>Mint Authority:</strong> revoked ({{MINT_AUTH_ADDR}})</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Allocation</strong>
-          <ul class="list">
-            <li>Liquidity Pool — 60% locked</li>
-            <li>Community — 5% {{WALLET_ADDRESS}}</li>
-            <li>Team (vesting 3-6 months) — 5% {{WALLET_ADDRESS}}</li>
-          </ul>
-          <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn alt" href="{{LP_LOCK_PROOF_URL}}" target="_blank" rel="noopener">LP Lock Proof</a>
-            <a class="btn alt" href="https://solscan.io/token/{{CONTRACT_ADDRESS}}" target="_blank" rel="noopener">View on Solscan</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUY -->
-  <section id="buy">
-    <div class="wrap">
-      <h2>How to Buy</h2>
-      <div class="card">
-        <ol class="list">
-          <li>Get SOL in your Phantom or Solflare wallet.</li>
-          <li>Open Jupiter or use your favorite trading platform and paste the contract address. Or use the direct pair link.</li>
-          <li>Set slippage, confirm, and swap SOL for $HIRO.</li>
-        </ol>
-        <a class="btn" href="{{JUPITER_SWAP_URL}}" target="_blank" rel="noopener">Open Jupiter</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <p><strong>Contract:</strong> <span id="contractFooter">{{CONTRACT_ADDRESS}}</span></p>
-    <p>$HIRO is a memecoin community token and software project. Nothing here is investment advice. Always verify contract address and DYOR.</p>
-    <p>© <span id="year"></span> HIRO • <a href="https://x.com/HiroInMetaverse" target="_blank" rel="noopener">@HiroInMetaverse</a></p>
-  </div>
-</footer>
-
-<script>
-  const copyBtn = document.getElementById('copyBtn');
-  copyBtn?.addEventListener('click', async () => {
-    const text = document.getElementById('contract').textContent.trim();
-    try { await navigator.clipboard.writeText(text); copyBtn.textContent = 'Copied!'; setTimeout(()=>copyBtn.textContent='Copy',1500); }
-    catch { alert('Copy failed'); }
-  });
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('contractFooter').textContent = document.getElementById('contract').textContent;
-</script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="card"><strong>Nam-Shub of Enki</strong><br/><small>The mythic code-spell against the Snow Crash virus — a nod to language-as
